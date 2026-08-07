@@ -374,18 +374,18 @@ def dashboard():
    
 
     if last_week_tasks == 0:
-     comparison = "🎉 New activity this week!"
+      comparison = "🎉 New activity this week!"
 
     else:
      task_difference = this_week_tasks - last_week_tasks
 
-    if task_difference > 0:
+     if task_difference > 0:
         comparison = f"📈 Completed {task_difference} more task{'s' if task_difference > 1 else ''} than last week"
+ 
+     elif task_difference < 0:
+        comparison = f"📉 Completed {abs(task_difference)} fewer task{'s' if abs(task_difference) > 1 else ''} than last week"
 
-    elif task_difference < 0:
-          comparison = f"📉 Completed {abs(task_difference)} fewer task{'s' if abs(task_difference) > 1 else ''} than last week"
-
-    else:
+     else:
         comparison = "🤝 Same number of tasks as last week"
 
         
